@@ -44,10 +44,14 @@ h2{
 input{
     outline-style: none;
     border: none;
-    height: 60%;
+    height: 27px;
     margin-top: -5px;
     font-size: 20px;
     padding-left: 5px;
+    border-radius: 10px;
+    font-family: 'Dosis', sans-serif;
+    margin-right: 50px;
+    
 }
 .delete, .delete-hover{
     margin-top: 10px;
