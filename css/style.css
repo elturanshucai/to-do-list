@@ -9,7 +9,7 @@ body{
     font-family: 'Dosis', sans-serif;
 }
 .todo{
-    margin: 200px auto;
+    margin: 50px auto;
     width: 336px;
     height: fit-content;
     min-height: 236px;
@@ -40,6 +40,7 @@ h2{
     padding-bottom: 5px;
     border-radius: 10px;
     margin-bottom: 10px;
+    display: block;
 }
 input{
     outline-style: none;
@@ -108,8 +109,22 @@ button{
 li{
     display: flex;
     margin-bottom: 10px;
+    border: 1px solid rgb(29, 29, 29);
+    padding: 0 10px 10px;
+    border-radius: 10px;
 }
 li p{
     margin-top: 10px;
     width: 250px;
+}
+.drag{
+    height: 200px;
+    width: 336px;
+    border-radius: 20px;
+    font-size: 30px;
+    background-color: rgb(211, 206, 206);
+    color: black;
+    padding: 70px 40px;
+    margin: 20px auto;
+    display: none;
 }
