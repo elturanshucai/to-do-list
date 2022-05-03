@@ -20,9 +20,11 @@ btn.addEventListener('mouseout', () => {
     add.style.display = 'none'
     btn.style.backgroundColor = 'white'
 })
+
 let id=1
 btn.addEventListener('click', () => {
-    if (inputdiv.style.display == 'block') {
+        if(input.value.trim()!=''){
+            inputdiv.style.display == 'block'
         let li = document.createElement('li')
         li.draggable = 'true'
         li.id = id
@@ -73,12 +75,9 @@ btn.addEventListener('click', () => {
         img1.addEventListener('click', (e) => {
             e.target.parentElement.remove()
         })
-    }
-    else if (inputdiv.style.display == 'none') {
-        inputdiv.style.display = 'block'
-        list.style.display = 'none'
+
         input.focus()
-    }
+        }
 })
 
 const del = document.querySelector('.delete')
@@ -92,18 +91,10 @@ del.addEventListener('mouseout', (e) => {
 del.addEventListener('click', () => {
     input.value = ''
 })
-let click = 0
+
 filter_az.addEventListener('click', (e) => {
-    if (click == 0) {
-        list.style.display = 'block'
-        inputdiv.style.display = 'none'
-        click = 1
-    }
-    else if (click == 1) {
-        e.target.style.display = 'none'
+    e.target.style.display = 'none'
         filter_az_hover.style.display = 'block'
-        list.style.display = 'block'
-        inputdiv.style.display = 'none'
         let task = []
         let p = document.querySelectorAll('.list p')
         p.forEach(item => {
@@ -113,8 +104,8 @@ filter_az.addEventListener('click', (e) => {
         p.forEach((item, index) => {
             item.innerText = task[index]
         })
-        click = 0
-    }
+        input.focus()
+        
 })
 filter_az_hover.addEventListener('click', (e) => {
     e.target.style.display = 'none'
@@ -128,11 +119,12 @@ filter_az_hover.addEventListener('click', (e) => {
     p.forEach((item, index) => {
         item.innerText = task[index]
     })
+    input.focus()
 })
 filter_za_hover.addEventListener('click', (e) => {
     e.target.style.display = 'none'
     filter_az.style.display = 'block'
-    list.style.display = 'none'
-    inputdiv.style.display = 'block'
+    input.focus()
 })
 
+input.focus()
