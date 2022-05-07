@@ -75,25 +75,7 @@ button{
     cursor: pointer;
     transition: all 300ms;
 }
-.button{
-    width: 100px;
-    height: 42px;
-    padding: 10px;
-    font-size: 20px;
-    display: none;
-}
-.plus{
-    display: inline-block;
-    background-color: rgb(191, 136, 243);
-    height: 42px;
-    width: 50px;
-    text-align: center;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: 300;
-    justify-content: flex-start;
-    border-radius: 50%;
-}
+
 .filter-az-hover, .filter-za, .filter-za-hover{
     display: none;
 }
@@ -105,6 +87,7 @@ button{
     border: 1px solid rgb(172, 168, 168);
     border-radius: 10px;
     margin-bottom: 20px;
+    min-height: 40px;
 }
 li{
     display: flex;
@@ -116,6 +99,14 @@ li{
 li p{
     margin-top: 10px;
     width: 250px;
+}
+button{
+    justify-content: center;
+    align-items: center;
+    background-color: #da1884;
+    font-size: 18px;
+    font-family: 'Dosis';
+    letter-spacing: 1px;
 }
 .drag{
     height: 200px;

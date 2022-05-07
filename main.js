@@ -6,25 +6,20 @@ const inputdiv = document.querySelector('.inputdiv')
 const input = document.querySelector('input')
 const list = document.querySelector('.list')
 const btn = document.querySelector('button')
-const plus = document.querySelector('.plus')
-const add = document.querySelector('.button')
 const drag = document.querySelector('.drag')
-inputdiv.style.display = 'block'
+list.style.display='none'
 
 
-plus.addEventListener('mouseover', () => {
-    add.style.display = 'block'
+btn.addEventListener('mouseover', () => {
     btn.style.backgroundColor = 'blueviolet'
 })
 btn.addEventListener('mouseout', () => {
-    add.style.display = 'none'
-    btn.style.backgroundColor = 'white'
+    btn.style.backgroundColor = '#da1884'
 })
 
 let id=1
 btn.addEventListener('click', () => {
         if(input.value.trim()!=''){
-            inputdiv.style.display == 'block'
         let li = document.createElement('li')
         li.draggable = 'true'
         li.id = id
@@ -66,6 +61,8 @@ btn.addEventListener('click', () => {
         }
         list.append(li)
         input.value = ''
+        list.style.display='block'
+        
         img1.addEventListener('mouseover', (e) => {
             e.target.src = '/img/deletehover.svg'
         })
@@ -77,6 +74,15 @@ btn.addEventListener('click', () => {
         })
 
         input.focus()
+        }
+})
+list.addEventListener('change', ()=>{
+    let tasks=document.querySelectorAll('.list li')
+        if(tasks.length==0){
+            list.style.display='none'
+        }
+        else{
+            list.style.display='block'
         }
 })
 
