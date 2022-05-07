@@ -7,7 +7,7 @@ const input = document.querySelector('input')
 const list = document.querySelector('.list')
 const btn = document.querySelector('button')
 const drag = document.querySelector('.drag')
-list.style.display='none'
+list.style.display = 'none'
 
 
 btn.addEventListener('mouseover', () => {
@@ -17,9 +17,9 @@ btn.addEventListener('mouseout', () => {
     btn.style.backgroundColor = '#da1884'
 })
 
-let id=1
+let id = 1
 btn.addEventListener('click', () => {
-        if(input.value.trim()!=''){
+    if (input.value.trim() != '') {
         let li = document.createElement('li')
         li.draggable = 'true'
         li.id = id
@@ -52,17 +52,24 @@ btn.addEventListener('click', () => {
             let itemId = event.dataTransfer.getData('id');
             if (itemId) {
                 event.target.append(document.getElementById(itemId))
-                let li2=document.querySelectorAll('.drag li')
-                li2.forEach(item=>{
-                    item.style.display='none'
+                let li2 = document.querySelectorAll('.drag li')
+                li2.forEach(item => {
+                    item.style.display = 'none'
                 })
-                drag.style.display='none'
+                drag.style.display = 'none'
+                let pler = document.querySelectorAll('.list p')
+                if (pler.length == 0) {
+                    list.style.display = 'none'
+                }
+                else {
+                    list.style.display = 'block'
+                }
             }
         }
         list.append(li)
         input.value = ''
-        list.style.display='block'
-        
+        list.style.display = 'block'
+
         img1.addEventListener('mouseover', (e) => {
             e.target.src = '/img/deletehover.svg'
         })
@@ -71,19 +78,26 @@ btn.addEventListener('click', () => {
         })
         img1.addEventListener('click', (e) => {
             e.target.parentElement.remove()
+            let pler = document.querySelectorAll('.list p')
+            if (pler.length == 0) {
+                list.style.display = 'none'
+            }
+            else {
+                list.style.display = 'block'
+            }
         })
 
         input.focus()
-        }
+    }
 })
-list.addEventListener('change', ()=>{
-    let tasks=document.querySelectorAll('.list li')
-        if(tasks.length==0){
-            list.style.display='none'
-        }
-        else{
-            list.style.display='block'
-        }
+list.addEventListener('change', () => {
+    let tasks = document.querySelectorAll('.list li')
+    if (tasks.length == 0) {
+        list.style.display = 'none'
+    }
+    else {
+        list.style.display = 'block'
+    }
 })
 
 const del = document.querySelector('.delete')
@@ -100,18 +114,18 @@ del.addEventListener('click', () => {
 
 filter_az.addEventListener('click', (e) => {
     e.target.style.display = 'none'
-        filter_az_hover.style.display = 'block'
-        let task = []
-        let p = document.querySelectorAll('.list p')
-        p.forEach(item => {
-            task.push(item.innerText)
-        })
-        task.sort()
-        p.forEach((item, index) => {
-            item.innerText = task[index]
-        })
-        input.focus()
-        
+    filter_az_hover.style.display = 'block'
+    let task = []
+    let p = document.querySelectorAll('.list p')
+    p.forEach(item => {
+        task.push(item.innerText)
+    })
+    task.sort()
+    p.forEach((item, index) => {
+        item.innerText = task[index]
+    })
+    input.focus()
+
 })
 filter_az_hover.addEventListener('click', (e) => {
     e.target.style.display = 'none'

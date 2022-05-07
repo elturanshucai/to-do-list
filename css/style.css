@@ -37,22 +37,26 @@ h2{
     margin: auto;
     height: 40px;
     border: 1px solid rgb(172, 168, 168);
-    padding-bottom: 5px;
     border-radius: 10px;
     margin-bottom: 10px;
     display: block;
+    justify-content: baseline;
 }
 input{
     outline-style: none;
     border: none;
-    height: 27px;
-    margin-top: -5px;
+    height: 30px;
     font-size: 20px;
-    padding-left: 5px;
+    padding-left: 15px;
     border-radius: 10px;
     font-family: 'Dosis', sans-serif;
-    margin-right: 50px;
-    
+    margin-top: -5px;
+    margin-right: 45px;
+    width: 200px;
+}
+.list p{
+    width: 210px;
+    word-wrap: break-word;
 }
 .delete, .delete-hover{
     margin-top: 10px;
