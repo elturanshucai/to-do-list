@@ -46,6 +46,10 @@ btn.addEventListener('click', () => {
             event.dataTransfer.setData('id', event.target.id)
             drag.style.display = 'block'
         }
+        li.ondragend=dragOut;
+        function dragOut(){
+            drag.style.display = 'none'
+        }
 
         drag.ondrop = drop;
         function drop(event) {
@@ -120,7 +124,7 @@ filter_az.addEventListener('click', (e) => {
     p.forEach(item => {
         task.push(item.innerText)
     })
-    task.sort()
+    task.sort((a,b)=>a-b)
     p.forEach((item, index) => {
         item.innerText = task[index]
     })
@@ -135,7 +139,7 @@ filter_az_hover.addEventListener('click', (e) => {
     p.forEach(item => {
         task.push(item.innerText)
     })
-    task.sort().reverse()
+    task.sort((a,b)=>b-a)
     p.forEach((item, index) => {
         item.innerText = task[index]
     })

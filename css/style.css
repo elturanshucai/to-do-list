@@ -8,6 +8,10 @@
 body{
     font-family: 'Dosis', sans-serif;
 }
+.app{
+    display: flex;
+    position: relative;
+}
 .todo{
     margin: 50px auto;
     width: 336px;
@@ -114,12 +118,14 @@ button{
 }
 .drag{
     height: 200px;
-    width: 336px;
+    width: 250px;
     border-radius: 20px;
     font-size: 30px;
     background-color: rgb(211, 206, 206);
     color: black;
     padding: 70px 40px;
-    margin: 20px auto;
     display: none;
+    position: absolute;
+    top: 80px;
+    right: 30px;
 }
