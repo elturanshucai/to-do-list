@@ -124,12 +124,12 @@ filter_az.addEventListener('click', (e) => {
     p.forEach(item => {
         task.push(item.innerText)
     })
+    task.sort()
     task.sort((a,b)=>a-b)
     p.forEach((item, index) => {
         item.innerText = task[index]
     })
     input.focus()
-
 })
 filter_az_hover.addEventListener('click', (e) => {
     e.target.style.display = 'none'
@@ -139,6 +139,7 @@ filter_az_hover.addEventListener('click', (e) => {
     p.forEach(item => {
         task.push(item.innerText)
     })
+    task.sort().reverse()
     task.sort((a,b)=>b-a)
     p.forEach((item, index) => {
         item.innerText = task[index]
